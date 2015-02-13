@@ -34,8 +34,6 @@ def round_sig_figs(value, num_sig_figs):
     
 class LatexTable(object):
 
-    row_strings = []
-
     def __init__(self, table_spec, position=None, centering=False,
                  caption=None, label=None, auto_hline=True, num_sig_figs=2):
         self.table = None
@@ -46,6 +44,7 @@ class LatexTable(object):
         self.label = escape(label)
         self.num_sig_figs = num_sig_figs
         self.auto_hline = auto_hline
+        self.row_strings = []
 
     def add_row(self, *args):
         columns = []
